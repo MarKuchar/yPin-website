@@ -7,6 +7,10 @@ import './App.css';
 
 // Import the components I've made
 import Footer  from './components/Footer';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact'
+
 
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -51,6 +55,16 @@ class App extends React.Component {
                 </Nav>
               </Navbar.Collapse>
             </Navbar>
+
+            <Route path="/" exact render={() => <Home tittle={this.state.home.tittle}
+            // Use exact because we want exact match and this is final destination, other ones are unique.
+            // State is important, we use properties from the main page, so we don't need to have a pages to be class
+            // components but functional components and just display data
+              subTittle={this.state.home.subTittle} text={this.state.home.text} /> } />
+            
+            <Route path="/about" render={() => <About tittle={this.state.about.tittle} /> } />
+
+            <Route path="/contact" render={() => <Contact tittle={this.state.home.tittle} /> } />
 
             <Footer/>
 
