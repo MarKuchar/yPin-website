@@ -1,8 +1,10 @@
 import React from 'react';
 
-function Home() {
+import Myself from '../components/Myself';
+
+function Home(props) {
     return(
-        <p>Home Works!</p>
+        <Myself tittle={props.tittle} subTittle={props.subTittle} text={props.text} />
     );
 };
 
