@@ -27,8 +27,8 @@ class App extends React.Component {
       ],
       home: {
         tittle: 'Do More',
-        subTittle: 'Subtittle',
-        text: 'TEXT'
+        subTittle: 'Art of code',
+        text: 'Find my projects below'
       }, 
       about: {
         tittle: 'About me',
