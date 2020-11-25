@@ -19,22 +19,22 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      tittle: 'Martin Kuchar',
+      title: 'Martin Kuchar',
       headerLinks: [
-        {tittle: 'Home', path: '/'},
-        {tittle: 'About', path: '/about'},
-        {tittle: 'Contact', path: '/contact'}
+        {title: 'Home', path: '/'},
+        {title: 'About', path: '/about'},
+        {title: 'Contact', path: '/contact'}
       ],
       home: {
-        tittle: 'Do More',
-        subTittle: 'Art of code',
+        title: 'Do More',
+        subTitle: 'Art of code',
         text: 'Find my projects below'
       }, 
       about: {
-        tittle: 'About me',
+        title: 'About me',
       },
       contact: {
-        tittle: 'Contact me'
+        title: 'Contact me'
       }
     }
   }
@@ -56,15 +56,15 @@ class App extends React.Component {
               </Navbar.Collapse>
             </Navbar>
 
-            <Route path="/" exact render={() => <Home tittle={this.state.home.tittle}
+            <Route path="/" exact render={() => <Home title={this.state.home.title}
             // Use exact because we want exact match and this is final destination, other ones are unique.
             // State is important, we use properties from the main page, so we don't need to have a pages to be class
             // components but functional components and just display data
-              subTittle={this.state.home.subTittle} text={this.state.home.text} /> } />
+              subTitle={this.state.home.subTitle} text={this.state.home.text} /> } />
             
-            <Route path="/about" render={() => <About tittle={this.state.about.tittle} /> } />
+            <Route path="/about" render={() => <About title={this.state.about.title} /> } />
 
-            <Route path="/contact" render={() => <Contact tittle={this.state.home.tittle} /> } />
+            <Route path="/contact" render={() => <Contact title={this.state.home.title} /> } />
 
             <Footer/>
 

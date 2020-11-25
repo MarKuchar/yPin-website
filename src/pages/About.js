@@ -5,7 +5,7 @@ import Myself from '../components/Myself';
 function About(props) {
     return(
         <div>
-            <Myself tittle={props.tittle} />
+            <Myself title={props.title} />
             <Content>
                 <p>I am a dedicated software engineer with creative problem-solving skills.<br/>
                 Currently, I am seeking opportunities that will allow proceeding in the way to become a qualified software engineer.</p>

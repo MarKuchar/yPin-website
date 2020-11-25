@@ -14,26 +14,26 @@ class Carousel extends React.Component {
             items: [
                 {
                     id: 0,
-                    tittle: 'Spike The Day',
-                    subtittle: 'Advertisment app that using AR technology',
+                    title: 'Spike The Day',
+                    subTitle: 'Advertisment app that using AR technology',
                     imgSrc: yPin,
-                    link: 'htttps://spike.com',
+                    link: 'https://github.com/cayomesquita/spike',
                     selected: false
                 },
                 {
                     id: 1,
-                    tittle: 'Pexeso',
-                    subtittle: 'Memory card game with different kind of animations',
+                    title: 'Pexeso',
+                    subTitle: 'Memory card game with different kind of animations',
                     imgSrc: pexeso,
-                    link: 'htttps://pexeso.com',
+                    link: 'https://github.com/MarKuchar/Pexeso',
                     selected: false
                 },
                 {
-                    id: 3,
-                    tittle: 'Github',
-                    subtittle: 'Personal github page',
+                    id: 2,
+                    title: 'Github',
+                    subTitle: 'Personal github page',
                     imgSrc: github,
-                    link: 'https://github.com',
+                    link: 'https://github.com/MarKuchar',
                     selected: false
                 }
             ]
@@ -41,7 +41,7 @@ class Carousel extends React.Component {
     }
 
     handleCardClick = (id, card) => {
-        let items = [];
+        let items = [...this.state.items];
         items[id].selected = items[id].selected ? false : true;
         items.forEach(item => {
             if (item.id !== id) {

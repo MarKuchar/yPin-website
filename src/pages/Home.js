@@ -5,7 +5,7 @@ import Myself from '../components/Myself';
 function Home(props) {
     return(
         <div>
-            <Myself tittle={props.tittle} subTittle={props.subTittle} text={props.text} />
+            <Myself title={props.title} subTitle={props.subTitle} text={props.text} />
             <Carousel/>
         </div>
     );
