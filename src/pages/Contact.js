@@ -57,7 +57,6 @@ class Contact extends React.Component {
                         <Button className="d-inline-block" variant="primary" type="submit" disabled={this.state.disabled}>
                             Send
                         </Button>
-
                         { this.state.emailSent === true && <p className="d-inline success-msg">Email Sent</p> }
                         { this.state.emailSent === false && <p className="d-inline err-msg">Email Not Sent</p> }
                     </Form>
