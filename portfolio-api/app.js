@@ -1,7 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser'); // set the body to set an extra info
 const cors = require('cors'); // cross origin resource sharing -> 
-const sendGrid = require('@sendGrid/mail');
+const sendGrid = require('@sendgrid/mail');
+const sendGridApiKey = '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'
+
 
 const app = express();
 
@@ -22,7 +24,8 @@ app.get('/api', (req, res, next) => { // good way how to debug -> when the addre
 }); 
 
 app.post('/api/email', (req, res, next) => {
-    sendGrid.setApiKey('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'); // Generated key from sendGrid website, very unique
+    // sgMail.setApiKey(process.env.sendGridApiKey)
+    sendGrid.setApiKey('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'); // Generated key from sendGrid website, very unique
     const msg = {
         to: 'kucharmartin0@gmail.com',
         from: req.body.email,
