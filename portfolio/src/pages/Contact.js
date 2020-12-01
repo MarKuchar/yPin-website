@@ -1,8 +1,9 @@
 import React from 'react';
-import Myself from '../components/Myself'
-import Content from '../components/Content'
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
+import Myself from '../components/Myself';
+import Content from '../components/Content';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Axios from 'axios';
 
 class Contact extends React.Component {
     constructor(props) {
@@ -32,6 +33,28 @@ class Contact extends React.Component {
             disabled: true,
             emailSent: false
         });
+
+
+        // We pass the whole state, and in backend we choose what we actually need
+        Axios.post('http://localhost:3030/api/email', this.state)
+            .then(res => {
+                if(res.data.success) {
+                    this.setState({
+                        disabled: false,
+                        emailSent: true
+                    });
+                } else {
+                    this.setState({
+                        disabled: false, 
+                        emailSent: false
+                    });
+                }
+            }).catch(err => {
+                this.setState({
+                    disabled: false,
+                    emailSent: false
+                });
+            })
     }
 
     render() {
@@ -51,7 +74,7 @@ class Contact extends React.Component {
                         </Form.Group>
                         <Form.Group>
                             <Form.Label htmlFor="message">Message</Form.Label>
-                            <Form.Control id="message" name="message" as="textarea" rows="3" value={this.state.email} onChange={this.handleChange}></Form.Control>
+                            <Form.Control id="message" name="message" as="textarea" rows="3" value={this.state.message} onChange={this.handleChange}></Form.Control>
                         </Form.Group>
 
                         <Button className="d-inline-block" variant="primary" type="submit" disabled={this.state.disabled}>
