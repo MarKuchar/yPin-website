@@ -1,6 +1,11 @@
 {
+<<<<<<< Updated upstream
   "short_name": "Portfolio",
   "name": "Portfolio Martin Kuchar",
+=======
+  "short_name": "React App",
+  "name": "Create React App Sample",
+>>>>>>> Stashed changes
   "icons": [
     {
       "src": "favicon.ico",
