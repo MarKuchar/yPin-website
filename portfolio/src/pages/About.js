@@ -6,7 +6,7 @@ function About(props) {
     return(
         <div>
             <Myself title={props.title} />
-            <Content style={{ color: 'white' }}>
+            <Content>
                 <p>I am a dedicated software engineer with creative problem-solving skills.<br/>
                 Currently, I am seeking opportunities that will allow proceeding in the way to become a qualified software engineer.</p>
                 <p>My expertise also includes drawing in solid work design software and building projects in HVAC systems. </p>

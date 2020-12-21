@@ -18,7 +18,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 const styles = {
   paperContainer: {
     background: `url(${backgroundPic})`,
-    backgroundSize: 'cover'
+    backgroundSize: 'cover', 
+    height: "100vh"
   }
 };
 
@@ -50,7 +51,7 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-          <Container className="p-0" fluid={true} style={styles.paperContainer}>
+          <Container className="p-0" fluid={true} style={styles.paperContainer} >
             <Navbar className="border-bottom" bg="transparent" expand="lg" >
               <Navbar.Brand style={{ color: 'white' }} >Martin Kuchar</Navbar.Brand>
 
@@ -74,7 +75,7 @@ class App extends React.Component {
 
             <Route path="/contact" render={() => <Contact title={this.state.contact.title} /> } />
 
-            <Footer/>
+            <Footer style={{ height: '100%', position: 'fixed', left: '0px', width: '100%', overflow: 'hidden'}}/>
 
 
           </Container>
