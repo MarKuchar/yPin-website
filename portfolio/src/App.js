@@ -70,13 +70,12 @@ class App extends React.Component {
             // State is important, we use properties from the main page, so we don't need to have a pages to be class
             // components but functional components and just display data
               subTitle={this.state.home.subTitle} text={this.state.home.text} /> } />
-            
+          
             <Route path="/about" render={() => <About title={this.state.about.title} /> } />
 
             <Route path="/contact" render={() => <Contact title={this.state.contact.title} /> } />
 
-            <Footer style={{ height: '100%', position: 'fixed', left: '0px', width: '100%', overflow: 'hidden'}}/>
-
+            <Footer />
 
           </Container>
       </Router>
