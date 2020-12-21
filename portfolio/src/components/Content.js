@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/esm/Row';
 function Content(props) {
     return(
         <Container fluid={true}>
-            <Row className="justify-content-center">
+            <Row className="justify-content-center" >
                 <Col md={8}>
                     {/* Everything we put inside 'Content' tags */}
                     {props.children}

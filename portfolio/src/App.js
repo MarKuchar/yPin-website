@@ -10,9 +10,17 @@ import Footer  from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact'
+import backgroundPic from './assets/images/backgroundPic.png'
 
 
 import 'bootstrap/dist/css/bootstrap.css';
+
+const styles = {
+  paperContainer: {
+    background: `url(${backgroundPic})`,
+    backgroundSize: 'cover'
+  }
+};
 
 class App extends React.Component {
 
@@ -42,16 +50,16 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-          <Container className="p-0" fluid={true}>
-            <Navbar className="border-bottom" bg="transparent" expand="lg">
-              <Navbar.Brand>Martin Kuchar</Navbar.Brand>
+          <Container className="p-0" fluid={true} style={styles.paperContainer}>
+            <Navbar className="border-bottom" bg="transparent" expand="lg" >
+              <Navbar.Brand style={{ color: 'white' }} >Martin Kuchar</Navbar.Brand>
 
               <Navbar.Toggle className="border-0" arja-aria-controls="navbar-toggle"/>
               <Navbar.Collapse id="navbar-toggle">
-                <Nav className="ml-auto"> 
-                  <Link className="nav-link" to="/">Home</Link>
-                  <Link className="nav-link" to="/about">About</Link>
-                  <Link className="nav-link" to="/contact">Contact</Link>
+                <Nav className="ml-auto" > 
+                  <Link style={{ color: 'white' }} className="nav-link" to="/">Home</Link>
+                  <Link style={{ color: 'white' }} className="nav-link" to="/about">About</Link>
+                  <Link style={{ color: 'white' }} className="nav-link" to="/contact">Contact</Link>
                 </Nav>
               </Navbar.Collapse>
             </Navbar>
