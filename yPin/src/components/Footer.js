@@ -5,15 +5,16 @@ import Col from 'react-bootstrap/Col';
 
 function Footer() {
     return(
-        <footer className="mt-5">
-            <div class="fixed-bottom">
-                <Container fluid={true}>
-                    <Row className="border-top justify-content-between p-3">
+        <footer >
+            <div className="fixed-bottom" style={{ backgroundColor: "rgb(" + 0 + "," + 191 + "," + 255 + ")"}}>
+                <Container fluid={true} >
+                    <Row className="border-top justify-content-between p-3 height:60px ">
+                    
                         <Col className="p-0" md={3} sm={12} style={{ color: 'white' }}>
                             yPin
                         </Col>
                         <Col className="p-0 d-flex justify-content-end" md={3} style={{ color: 'white' }}>
-                            © Copyright yPin team
+                            © Copyright yPin Team
                         </Col>
                     </Row>
                 </Container>
@@ -21,5 +22,4 @@ function Footer() {
         </footer>
     );
 };
-
 export default Footer;

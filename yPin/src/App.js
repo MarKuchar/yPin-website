@@ -10,9 +10,8 @@ import Footer  from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/Policy';
 import AboutT from './pages/TermsAndConditions';
-import Contact from './pages/Contact'
-import backgroundPic from './assets/images/city.png'
-
+import Contact from './pages/Contact';
+import backgroundPic from './assets/images/city.png';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -20,6 +19,7 @@ const styles = {
   paperContainer: {
     background: `url(${backgroundPic})`,
     backgroundSize: 'cover', 
+    backgroundPosition: 'center',
     height: "100vh"
   }
 };
@@ -56,7 +56,7 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-          <Container className="p-0" fluid={true} style={styles.paperContainer} >
+          <Container id="page-container" fluid={true} style={styles.paperContainer} >
             <Navbar className="border-bottom" bg="transparent" expand="lg" >
               <Navbar.Brand style={{ color: 'white' }} >yPin</Navbar.Brand>
 
@@ -70,17 +70,18 @@ class App extends React.Component {
                 </Nav>
               </Navbar.Collapse>
             </Navbar>
-
-            <Route path="/" exact render={() => <Home title={this.state.home.title} /> } />
+            <div id="content-wrap">
+              <Route path="/" exact render={() => <Home title={this.state.home.title} /> } />
           
-            <Route path="/policy" render={() => <About title={this.state.policy.title} /> } />
+              <Route path="/policy" render={() => <About title={this.state.policy.title} /> } />
 
-            <Route path="/termsandconditions" exact render={() => <AboutT title={this.state.tAndC.title} /> } />
+              <Route path="/termsandconditions" exact render={() => <AboutT title={this.state.tAndC.title} /> } />
 
-            <Route path="/contact" render={() => <Contact title={this.state.contact.title} /> } />
-
-            <Footer />
-
+              <Route path="/contact" render={() => <Contact title={this.state.contact.title} /> } />
+            </div>
+            <div>
+              <Footer/>
+            </div>
           </Container>
       </Router>
     );
